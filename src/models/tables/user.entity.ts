@@ -1,4 +1,5 @@
 import { Entity, Column } from 'typeorm';
+import typia from 'typia';
 import { CommonCloumns } from '../common/common-columns';
 
 export type DecodedUserToken = Pick<
@@ -55,11 +56,9 @@ export class UserEntity extends CommonCloumns {
 
   /**
    * 사용자의 생일을 의미하는 값
-   *
-   * @pattern ^(19\d{2}|2\d{3})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$
    */
   @Column('timestamp with time zone', { nullable: true, select: false })
-  public birth?: string | null;
+  public birth?: typia.Primitive<Date> | Date | string | null;
 
   /**
    * 사용자의 성별로 true면 남자라고 가정한다.

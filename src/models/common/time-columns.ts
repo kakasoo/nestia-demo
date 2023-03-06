@@ -7,5 +7,5 @@ export abstract class TimeColumns extends CreatedAtColumn {
   public readonly updatedAt!: typia.Primitive<Date> | Date | string;
 
   @DeleteDateColumn()
-  public readonly deletedAt?: typia.Primitive<Date> | Date | string;
+  public readonly deletedAt?: typia.Primitive<Date> | Date | string | null;
 }
