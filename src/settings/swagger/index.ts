@@ -9,6 +9,7 @@ export const SwaggerSetting = (app: INestApplication) => {
     'utf8',
   );
   const swaggerDocument = JSON.parse(swaagerConfig);
+  swaggerDocument.servers.at(0).url = `http://127.0.0.1:3000`;
 
   SwaggerModule.setup('api', app, swaggerDocument);
 };

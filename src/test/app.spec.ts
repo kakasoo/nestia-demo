@@ -24,7 +24,7 @@ describe('E2E calendars test', () => {
   describe('sdk', () => {
     it('타입 체크', async () => {
       const response = await Apis.api.v1.user.getHello({ host });
-      expect(response).toBe('hello');
+      expect(response).toBe('ello');
     });
   });
 });

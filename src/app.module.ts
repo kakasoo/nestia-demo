@@ -1,19 +1,11 @@
 import { Module } from '@nestjs/common';
-import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TransformInterceptor } from './interceptors/transformer.interceptor';
 import { UsersModule } from './modules/users.module';
 
 @Module({
   imports: [UsersModule],
   controllers: [AppController],
-  providers: [
-    AppService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: TransformInterceptor,
-    },
-  ],
+  providers: [AppService],
 })
 export class AppModule {}
