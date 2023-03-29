@@ -7,7 +7,7 @@
 import { Fetcher, Primitive } from "@nestia/fetcher";
 import type { IConnection } from "@nestia/fetcher";
 
-import type { Try } from "./../../../app.controller";
+import type { TryCatch } from "./../../../app.controller";
 
 /**
  * @controller AppController.ThisFunctionHasTooLongReturnType()
@@ -29,7 +29,7 @@ export function ThisFunctionHasTooLongReturnType
 }
 export namespace ThisFunctionHasTooLongReturnType
 {
-    export type Output = Primitive<Try<true, { readonly result: false; readonly code: 4000; readonly data: "Error happens something1."; } | { readonly result: false; readonly code: 4000; readonly data: "Error happens something2."; } | { ...; } | { ...; } | { ...; }>>;
+    export type Output = Primitive<TryCatch<6, { readonly result: false; readonly code: { readonly TEST: "IS_TEST"; }; readonly data: "Error happens something1."; }>>;
 
     export const METHOD = "GET" as const;
     export const PATH: string = "/omg";
